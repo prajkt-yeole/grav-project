@@ -8,6 +8,6 @@ content:
         by: default
         dir: asc
         custom:
-            - _showcase
             - _features
+            - _showcase
 ---
