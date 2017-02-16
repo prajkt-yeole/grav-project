@@ -1,175 +1,245 @@
-/* Core Stuff */
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 body {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #606d6e;
-}
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #454B4D;
-}
-
-a {
-    color: #1F8CD6;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #175E91;
-}
-
-pre {
-    background: #F0F0F0;
-    margin: 1rem 0;
-    border-radius: 2px;
-}
-
-blockquote {
-    border-left: 10px solid #eee;
-    margin: 0;
-    padding: 0 2rem;
-}
-
-/* Utility Classes */
-.wrapper {
-    margin: 0 3rem;
-}
-
-.padding {
-    padding: 3rem 1rem;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
-}
-
-/* Content Styling */
-.header .padding {
-    padding: 1rem 0;
-}
-
-.header {
-    background-color: #1F8DD6;
-    color: #eee;
-}
-
-.header a {
-    color: #fff;
-}
-
-.header .logo {
-    font-size: 1.7rem;
-    text-transform: uppercase;
-}
-
-.footer {
-    background-color: #eee;
-}
-
-/* Menu Settings */
-.main-nav ul {
-    text-align: center;
-    letter-spacing: -1em;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav ul li {
-    display: inline-block;
-    letter-spacing: normal;
-}
-
-.main-nav ul li a {
-    position: relative;
-    display: block;
-    line-height: 45px;
-    color: #fff;
-    padding: 0 20px;
-    white-space: nowrap;
-}
-
-.main-nav > ul > li > a {
-    border-radius: 2px;
-}
-
-/*Active dropdown nav item */
-.main-nav ul li:hover > a {
-    background-color: #175E91;
-}
-
-/* Selected Dropdown nav item */
-.main-nav ul li.selected > a {
-    background-color: #fff;
-    color: #175E91;
-}
-
-/* Dropdown CSS */
-.main-nav ul li {position: relative;}
-
-.main-nav ul li ul {
+header {
+  height: 100vh;
+  padding-top: 40px;
+  position: relative; }
+  header .logo {
+    width: 200px; }
+  header .banner-text {
     position: absolute;
-    background-color: #1F8DD6;
-    min-width: 100%;
-    text-align: left;
-    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    color: #fff; }
+    header .banner-text h3 {
+      font-size: 28px;
+      font-weight: 100; }
+    header .banner-text h1 {
+      font-size: 36px;
+      font-weight: 300; }
+      header .banner-text h1 span {
+        color: #ffc723; }
 
-    display: none;
-}
-.main-nav ul li ul li {
-    display: block;
-}
+.custom-nav .nav li a {
+  color: #fff;
+  font-size: 16px; }
+  .custom-nav .nav li a:hover, .custom-nav .nav li a:active, .custom-nav .nav li a:focus {
+    background: transparent;
+    border-bottom: 3px solid #ffc723; }
 
-/* Dropdown CSS */
-.main-nav ul li ul ul {
-    left: 100%;
-    top: 0;
-}
+#features {
+  padding: 80px 0; }
+  #features .card {
+    text-align: center;
+    color: #555555; }
+    #features .card h3,
+    #features .card p {
+      font-weight: 300; }
 
-/* Active on Hover */
-.main-nav li:hover > ul {
-    display: block;
-}
+#toll-free-number {
+  padding: 40px 0;
+  background: #ffc723; }
+  #toll-free-number h2 {
+    font-size: 26px;
+    font-weight: 300;
+    margin: 0; }
+    #toll-free-number h2 span {
+      font-weight: 400; }
 
-/* Child Indicator */
-.main-nav .has-children > a {
-    padding-right: 30px;
-}
-.main-nav .has-children > a:after {
-    font-family: FontAwesome;
-    content: '\f107';
-    position: absolute;
-    display: inline-block;
-    right: 8px;
-    top: 0;
-}
+.heading {
+  text-align: center; }
+  .heading h1 {
+    color: #0f303f;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase; }
+  .heading span {
+    font-size: 18px;
+    color: #888888; }
+  .heading .separator {
+    margin-top: 40px !important;
+    width: 80px;
+    height: 1px;
+    border-top: 2px solid #ffc723;
+    margin: 0 auto;
+    margin-bottom: 40px; }
 
-.main-nav .has-children .has-children > a:after {
-    content: '\f105';
-}
+#partners {
+  padding: 80px 0; }
+  #partners .partner-logo img {
+    padding: 20px;
+    filter: grayscale(100%);
+    transition: 300ms ease; }
+    #partners .partner-logo img:hover {
+      filter: none; }
+
+#stats {
+  padding: 80px 0;
+  text-align: center; }
+  #stats i {
+    color: #fff;
+    font-size: 60px; }
+  #stats h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffc723; }
+  #stats h3 {
+    font-weight: 300;
+    color: #fff;
+    font-size: 22px; }
+
+#testimonials {
+  padding: 80px 0; }
+
+#testimonials .sec-body {
+  position: relative;
+  padding: 0 90px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 300;
+  text-align: center; }
+
+#testimonials .sec-body:before {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  content: '';
+  width: 38px;
+  height: 36px;
+  background: url(../images/icon_quote.png) no-repeat center;
+  opacity: 0.25; }
+
+#testimonials .owl-item {
+  font-style: italic; }
+
+#testimonials .owl-test .owl-controls {
+  margin-top: 50px; }
+
+#testimonials .owl-test .owl-controls .owl-page {
+  font-size: 15px;
+  text-align: center; }
+
+#testimonials .owl-test .owl-controls .owl-page > div {
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out 0s; }
+
+#testimonials .owl-test .owl-controls .owl-page span {
+  position: relative;
+  margin: 0;
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 1;
+  transition: width 0.2s ease-in-out 0s, height 0.2s ease-in-out 0s; }
+
+#testimonials .owl-test .owl-controls .owl-page span:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out 0s; }
+
+#testimonials .owl-test .owl-controls .owl-page span img {
+  display: block; }
+
+#testimonials .owl-test .owl-controls .owl-page.active > div {
+  opacity: 1; }
+
+#testimonials .owl-test .owl-controls .owl-page.active span {
+  width: 60px;
+  height: 60px; }
+
+#testimonials .owl-test .owl-controls .owl-page.active span:after {
+  opacity: 0; }
+
+#testimonials .owl-test .owl-pagination {
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  display: table; }
+
+#testimonials .owl-test .owl-pagination .owl-page {
+  width: 1%;
+  display: table-cell;
+  vertical-align: middle; }
+
+#footer-top {
+  padding: 80px 0;
+  background: #1f1f1f;
+  color: #fff; }
+  #footer-top h3 {
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-transform: uppercase; }
+  #footer-top p {
+    opacity: 0.7;
+    font-size: 13px; }
+  #footer-top .social {
+    margin-top: 15px; }
+    #footer-top .social a {
+      padding: 10px;
+      color: #fff;
+      transition: 300ms ease; }
+      #footer-top .social a:first-child {
+        padding-left: 0; }
+      #footer-top .social a:hover {
+        color: #ffc723; }
+  #footer-top .contact-list li {
+    list-style-type: none;
+    color: #fff;
+    opacity: 0.7;
+    margin-bottom: 25px;
+    font-size: 13px; }
+    #footer-top .contact-list li:before {
+      position: absolute;
+      left: 12px;
+      width: 20px;
+      font-size: 15px;
+      font-family: FontAwesome;
+      text-align: center;
+      color: #7A7A7A; }
+    #footer-top .contact-list li.address:before {
+      content: '\f015'; }
+    #footer-top .contact-list li.mail:before {
+      content: '\f095'; }
+    #footer-top .contact-list li.phone:before {
+      content: '\f003'; }
+    #footer-top .contact-list li .phone {
+      color: #ffc723; }
+  #footer-top .useful-links ul {
+    list-style: none;
+    padding: 0; }
+    #footer-top .useful-links ul li {
+      opacity: 0.7;
+      margin-bottom: 5px;
+      font-size: 13px; }
+      #footer-top .useful-links ul li:before {
+        font-family: FontAwesome;
+        content: '\f101';
+        color: #ffc723;
+        margin-right: 13px; }
+
+#footer {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 40px 0; }
+  #footer p {
+    margin: 0;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 13px; }
