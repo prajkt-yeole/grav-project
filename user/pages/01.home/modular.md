@@ -9,5 +9,8 @@ content:
         dir: asc
         custom:
             - _features
-            - _showcase
+            - _tollfree
+            - _partners
+            - _stats
+            - _testimonials
 ---
