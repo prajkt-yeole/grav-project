@@ -47,27 +47,27 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
 ";
         // line 42
         $this->displayBlock('header', $context, $blocks);
-        // line 57
-        echo "
-";
-        // line 58
-        $this->displayBlock('body', $context, $blocks);
         // line 65
         echo "
 ";
         // line 66
-        $this->displayBlock('footerTop', $context, $blocks);
-        // line 110
+        $this->displayBlock('body', $context, $blocks);
+        // line 73
         echo "
 ";
-        // line 111
-        $this->displayBlock('footer', $context, $blocks);
+        // line 74
+        $this->displayBlock('footerTop', $context, $blocks);
         // line 118
         echo "
 ";
         // line 119
+        $this->displayBlock('footer', $context, $blocks);
+        // line 126
+        echo "
+";
+        // line 127
         $this->displayBlock('bottom', $context, $blocks);
-        // line 122
+        // line 130
         echo "
 </body>
 ";
@@ -183,7 +183,7 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
         // line 43
         echo "    <div class=\"header\">
         <div class=\"wrapper padding\">
-            <a class=\"logo left\" href=\"";
+          <!--   <a class=\"logo left\" href=\"";
         // line 45
         echo (((($context["base_url"] ?? null) == "")) ? ("/") : (($context["base_url"] ?? null)));
         echo "\">
@@ -192,11 +192,11 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
         // line 47
         echo $this->getAttribute($this->getAttribute(($context["config"] ?? null), "site", array()), "title", array());
         echo "
-            </a>
+            </a> -->
             ";
         // line 49
         $this->displayBlock('header_navigation', $context, $blocks);
-        // line 54
+        // line 62
         echo "        </div>
     </div>
 ";
@@ -206,39 +206,47 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
     public function block_header_navigation($context, array $blocks = array())
     {
         // line 50
-        echo "            <nav class=\"main-nav\">
+        echo "            <nav class=\"navbar custom-nav\">
+            <div class=\"navbar-header\">
+                                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                                    <span class=\"sr-only\">Toggle navigation</span>
+                                    <span class=\"icon-bar\"></span>
+                                    <span class=\"icon-bar\"></span>
+                                    <span class=\"icon-bar\"></span>
+                                </button>
+                            </div>
                 ";
-        // line 51
-        $this->loadTemplate("partials/navigation.html.twig", "partials/base.html.twig", 51)->display($context);
-        // line 52
+        // line 59
+        $this->loadTemplate("partials/navigation.html.twig", "partials/base.html.twig", 59)->display($context);
+        // line 60
         echo "            </nav>
             ";
     }
 
-    // line 58
+    // line 66
     public function block_body($context, array $blocks = array())
     {
-        // line 59
+        // line 67
         echo "    <section id=\"body\">
         <div class=\"wrapper padding\">
         ";
-        // line 61
+        // line 69
         $this->displayBlock('content', $context, $blocks);
-        // line 62
+        // line 70
         echo "        </div>
     </section>
 ";
     }
 
-    // line 61
+    // line 69
     public function block_content($context, array $blocks = array())
     {
     }
 
-    // line 66
+    // line 74
     public function block_footerTop($context, array $blocks = array())
     {
-        // line 67
+        // line 75
         echo "        <section id=\"footer-top\">
         <div class=\"container\">
             <div class=\"row\">
@@ -284,10 +292,10 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
 ";
     }
 
-    // line 111
+    // line 119
     public function block_footer($context, array $blocks = array())
     {
-        // line 112
+        // line 120
         echo "    <section id=\"footer\">
         <div class=\"container\">
             <p>Created with <i class=\"fa fa-heart text-white\"></i> by Prajkt Yeole</p>
@@ -296,10 +304,10 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
 ";
     }
 
-    // line 119
+    // line 127
     public function block_bottom($context, array $blocks = array())
     {
-        // line 120
+        // line 128
         echo "    ";
         echo $this->getAttribute(($context["assets"] ?? null), "js", array(0 => "bottom"), "method");
         echo "
@@ -318,7 +326,7 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
 
     public function getDebugInfo()
     {
-        return array (  303 => 120,  300 => 119,  291 => 112,  288 => 111,  242 => 67,  239 => 66,  234 => 61,  228 => 62,  226 => 61,  222 => 59,  219 => 58,  214 => 52,  212 => 51,  209 => 50,  206 => 49,  200 => 54,  198 => 49,  193 => 47,  188 => 45,  184 => 43,  181 => 42,  176 => 34,  173 => 33,  170 => 32,  167 => 31,  165 => 30,  160 => 29,  157 => 28,  153 => 25,  150 => 24,  147 => 23,  144 => 22,  141 => 21,  138 => 20,  135 => 19,  132 => 18,  129 => 17,  126 => 16,  118 => 36,  116 => 28,  110 => 26,  108 => 16,  103 => 14,  99 => 13,  96 => 12,  94 => 11,  83 => 7,  80 => 6,  77 => 5,  71 => 122,  69 => 119,  66 => 118,  64 => 111,  61 => 110,  59 => 66,  56 => 65,  54 => 58,  51 => 57,  49 => 42,  44 => 40,  41 => 39,  39 => 5,  34 => 3,  31 => 2,  29 => 1,);
+        return array (  311 => 128,  308 => 127,  299 => 120,  296 => 119,  250 => 75,  247 => 74,  242 => 69,  236 => 70,  234 => 69,  230 => 67,  227 => 66,  222 => 60,  220 => 59,  209 => 50,  206 => 49,  200 => 62,  198 => 49,  193 => 47,  188 => 45,  184 => 43,  181 => 42,  176 => 34,  173 => 33,  170 => 32,  167 => 31,  165 => 30,  160 => 29,  157 => 28,  153 => 25,  150 => 24,  147 => 23,  144 => 22,  141 => 21,  138 => 20,  135 => 19,  132 => 18,  129 => 17,  126 => 16,  118 => 36,  116 => 28,  110 => 26,  108 => 16,  103 => 14,  99 => 13,  96 => 12,  94 => 11,  83 => 7,  80 => 6,  77 => 5,  71 => 130,  69 => 127,  66 => 126,  64 => 119,  61 => 118,  59 => 74,  56 => 73,  54 => 66,  51 => 65,  49 => 42,  44 => 40,  41 => 39,  39 => 5,  34 => 3,  31 => 2,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -375,12 +383,20 @@ class __TwigTemplate_4f064fd7edf5dfbce3e813b0d8ea2b7f07a9d1d877a4aa8a8fb851a2784
 {% block header %}
     <div class=\"header\">
         <div class=\"wrapper padding\">
-            <a class=\"logo left\" href=\"{{ base_url == '' ? '/' : base_url }}\">
+          <!--   <a class=\"logo left\" href=\"{{ base_url == '' ? '/' : base_url }}\">
                 <i class=\"fa fa-rebel\"></i>
                 {{ config.site.title }}
-            </a>
+            </a> -->
             {% block header_navigation %}
-            <nav class=\"main-nav\">
+            <nav class=\"navbar custom-nav\">
+            <div class=\"navbar-header\">
+                                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                                    <span class=\"sr-only\">Toggle navigation</span>
+                                    <span class=\"icon-bar\"></span>
+                                    <span class=\"icon-bar\"></span>
+                                    <span class=\"icon-bar\"></span>
+                                </button>
+                            </div>
                 {% include 'partials/navigation.html.twig' %}
             </nav>
             {% endblock %}

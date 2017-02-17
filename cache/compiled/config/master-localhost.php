@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1487311933,
-    'checksum' => '23a6195ebaf3df0c62e0b4d71cb5114a',
+    'timestamp' => 1487331408,
+    'checksum' => 'af7f179a30d2f9162e35c4b3b23e3630',
     'files' => [
         'user/config' => [
             'media' => [
@@ -15,7 +15,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1487220698
+                'modified' => 1487331406
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -23,7 +23,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1487311933
+                'modified' => 1487316102
             ]
         ],
         'system/config' => [
@@ -33,7 +33,7 @@ return [
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1487220698
+                'modified' => 1487331400
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
@@ -492,7 +492,7 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'Grav',
+            'title' => 'Cerium',
             'default_lang' => 'en',
             'author' => [
                 'name' => 'Joe Bloggs',

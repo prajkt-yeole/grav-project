@@ -17,84 +17,86 @@ class __TwigTemplate_23a78aac96a71ed522ea704fc99279a53007b7dbd93d788fdc1ebcf5e0d
     {
         // line 24
         echo "
-<ul>
-    ";
-        // line 26
+<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+    <ul class=\"nav navbar-nav pull-right\">
+        ";
+        // line 27
         if ($this->getAttribute($this->getAttribute(($context["theme_config"] ?? null), "dropdown", array()), "enabled", array())) {
-            // line 27
-            echo "        ";
+            // line 28
+            echo "            ";
             echo $this->getAttribute($this, "loop", array(0 => ($context["pages"] ?? null)), "method");
             echo "
-    ";
+        ";
         } else {
-            // line 29
-            echo "        ";
+            // line 30
+            echo "            ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["pages"] ?? null), "children", array()), "visible", array()));
             foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-                // line 30
-                echo "            ";
-                $context["current_page"] = ((($this->getAttribute($context["page"], "active", array()) || $this->getAttribute($context["page"], "activeChild", array()))) ? ("selected") : (""));
                 // line 31
-                echo "            <li class=\"";
+                echo "                ";
+                $context["current_page"] = ((($this->getAttribute($context["page"], "active", array()) || $this->getAttribute($context["page"], "activeChild", array()))) ? ("active") : (""));
+                // line 32
+                echo "                <li class=\"";
                 echo ($context["current_page"] ?? null);
                 echo "\">
-                <a href=\"";
-                // line 32
+                    <a href=\"";
+                // line 33
                 echo $this->getAttribute($context["page"], "url", array());
                 echo "\">
-                    ";
-                // line 33
+                        ";
+                // line 34
                 if ($this->getAttribute($this->getAttribute($context["page"], "header", array()), "icon", array())) {
                     echo "<i class=\"fa fa-";
                     echo $this->getAttribute($this->getAttribute($context["page"], "header", array()), "icon", array());
                     echo "\"></i>";
                 }
-                // line 34
-                echo "                    ";
+                // line 35
+                echo "                        ";
                 echo $this->getAttribute($context["page"], "menu", array());
                 echo "
-                </a>
-            </li>
-        ";
+                    </a>
+                </li>
+            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
-            echo "    ";
+            // line 39
+            echo "        ";
         }
-        // line 39
-        echo "    ";
+        // line 40
+        echo "        ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["site"] ?? null), "menu", array()));
         foreach ($context['_seq'] as $context["_key"] => $context["mitem"]) {
-            // line 40
-            echo "        <li>
-            <a href=\"";
             // line 41
+            echo "            <li>
+                <a href=\"";
+            // line 42
             echo $this->getAttribute($context["mitem"], "url", array());
             echo "\">
-                ";
-            // line 42
+                    ";
+            // line 43
             if ($this->getAttribute($context["mitem"], "icon", array())) {
                 echo "<i class=\"fa fa-";
                 echo $this->getAttribute($context["mitem"], "icon", array());
                 echo "\"></i>";
             }
-            // line 43
-            echo "                ";
+            // line 44
+            echo "                    ";
             echo $this->getAttribute($context["mitem"], "text", array());
             echo "
-            </a>
-        </li>
-    ";
+                </a>
+            </li>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mitem'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
-        echo "</ul>
+        // line 48
+        echo "    </ul>
+</div>
 
 ";
     }
@@ -118,7 +120,7 @@ class __TwigTemplate_23a78aac96a71ed522ea704fc99279a53007b7dbd93d788fdc1ebcf5e0d
             foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
                 // line 3
                 echo "        ";
-                $context["current_page"] = ((($this->getAttribute($context["p"], "active", array()) || $this->getAttribute($context["p"], "activeChild", array()))) ? ("selected") : (""));
+                $context["current_page"] = ((($this->getAttribute($context["p"], "active", array()) || $this->getAttribute($context["p"], "activeChild", array()))) ? ("active") : (""));
                 // line 4
                 echo "        ";
                 if (($this->getAttribute($this->getAttribute($this->getAttribute($context["p"], "children", array()), "visible", array()), "count", array()) > 0)) {
@@ -205,7 +207,7 @@ class __TwigTemplate_23a78aac96a71ed522ea704fc99279a53007b7dbd93d788fdc1ebcf5e0d
 
     public function getDebugInfo()
     {
-        return array (  178 => 22,  170 => 18,  164 => 17,  160 => 16,  155 => 15,  148 => 11,  141 => 8,  135 => 7,  131 => 6,  126 => 5,  123 => 4,  120 => 3,  115 => 2,  103 => 1,  97 => 47,  86 => 43,  80 => 42,  76 => 41,  73 => 40,  68 => 39,  65 => 38,  54 => 34,  48 => 33,  44 => 32,  39 => 31,  36 => 30,  31 => 29,  25 => 27,  23 => 26,  19 => 24,);
+        return array (  180 => 22,  172 => 18,  166 => 17,  162 => 16,  157 => 15,  150 => 11,  143 => 8,  137 => 7,  133 => 6,  128 => 5,  125 => 4,  122 => 3,  117 => 2,  105 => 1,  98 => 48,  87 => 44,  81 => 43,  77 => 42,  74 => 41,  69 => 40,  66 => 39,  55 => 35,  49 => 34,  45 => 33,  40 => 32,  37 => 31,  32 => 30,  26 => 28,  24 => 27,  19 => 24,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -220,7 +222,7 @@ class __TwigTemplate_23a78aac96a71ed522ea704fc99279a53007b7dbd93d788fdc1ebcf5e0d
     {
         return new Twig_Source("{% macro loop(page) %}
     {% for p in page.children.visible %}
-        {% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+        {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
         {% if p.children.visible.count > 0 %}
             <li class=\"has-children {{ current_page }}\">
                 <a href=\"{{ p.url }}\">
@@ -242,29 +244,31 @@ class __TwigTemplate_23a78aac96a71ed522ea704fc99279a53007b7dbd93d788fdc1ebcf5e0d
     {% endfor %}
 {% endmacro %}
 
-<ul>
-    {% if theme_config.dropdown.enabled %}
-        {{ _self.loop(pages) }}
-    {% else %}
-        {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class=\"{{ current_page }}\">
-                <a href=\"{{ page.url }}\">
-                    {% if page.header.icon %}<i class=\"fa fa-{{ page.header.icon }}\"></i>{% endif %}
-                    {{ page.menu }}
+<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+    <ul class=\"nav navbar-nav pull-right\">
+        {% if theme_config.dropdown.enabled %}
+            {{ _self.loop(pages) }}
+        {% else %}
+            {% for page in pages.children.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class=\"{{ current_page }}\">
+                    <a href=\"{{ page.url }}\">
+                        {% if page.header.icon %}<i class=\"fa fa-{{ page.header.icon }}\"></i>{% endif %}
+                        {{ page.menu }}
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
+        {% for mitem in site.menu %}
+            <li>
+                <a href=\"{{ mitem.url }}\">
+                    {% if mitem.icon %}<i class=\"fa fa-{{ mitem.icon }}\"></i>{% endif %}
+                    {{ mitem.text }}
                 </a>
             </li>
         {% endfor %}
-    {% endif %}
-    {% for mitem in site.menu %}
-        <li>
-            <a href=\"{{ mitem.url }}\">
-                {% if mitem.icon %}<i class=\"fa fa-{{ mitem.icon }}\"></i>{% endif %}
-                {{ mitem.text }}
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+    </ul>
+</div>
 
 ", "partials/navigation.html.twig", "C:\\xampp-7\\htdocs\\grav-project\\user\\themes\\cerium\\templates\\partials\\navigation.html.twig");
     }

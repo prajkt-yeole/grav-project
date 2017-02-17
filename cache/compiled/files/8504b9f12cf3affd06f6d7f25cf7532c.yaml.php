@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/user/config/system.yaml',
-    'modified' => 1487224340,
+    'modified' => 1487316102,
     'data' => [
         'absolute_urls' => false,
         'timezone' => '',
@@ -77,7 +77,7 @@ return [
             'etag' => false,
             'vary_accept_encoding' => false,
             'redirect_default_route' => false,
-            'redirect_default_code' => 301,
+            'redirect_default_code' => '301',
             'redirect_trailing_slash' => true,
             'ignore_files' => [
                 0 => '.DS_Store'
@@ -97,7 +97,7 @@ return [
             ]
         ],
         'cache' => [
-            'enabled' => true,
+            'enabled' => false,
             'check' => [
                 'method' => 'file'
             ],
@@ -137,7 +137,7 @@ return [
             ]
         ],
         'errors' => [
-            'display' => true,
+            'display' => '1',
             'log' => true
         ],
         'debugger' => [

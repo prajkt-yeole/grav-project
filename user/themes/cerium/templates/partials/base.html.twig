@@ -42,12 +42,20 @@
 {% block header %}
     <div class="header">
         <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+          <!--   <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
                 <i class="fa fa-rebel"></i>
                 {{ config.site.title }}
-            </a>
+            </a> -->
             {% block header_navigation %}
-            <nav class="main-nav">
+            <nav class="navbar custom-nav">
+            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
                 {% include 'partials/navigation.html.twig' %}
             </nav>
             {% endblock %}

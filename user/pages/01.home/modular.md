@@ -1,5 +1,5 @@
 ---
-title: 'One Page Demo Site'
+title: 'Home'
 menu: Home
 onpage_menu: true
 content:
@@ -8,6 +8,7 @@ content:
         by: default
         dir: asc
         custom:
+            - _banner
             - _features
             - _tollfree
             - _partners
