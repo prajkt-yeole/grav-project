@@ -1,53 +1,85 @@
-are through any other system and a licensee cannot
-impose that choice.
+<?php
 
-This section is intended to make thoroughly clear what is believed to
-be a consequence of the rest of this License.
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-  8. If the distribution and/or use of the Program is restricted in
-certain countries either by patents or by copyrighted interfaces, the
-original copyright holder who places the Program under this License
-may add an explicit geographical distribution limitation excluding
-those countries, so that distribution is permitted only in or among
-countries not thus excluded.  In such case, this License incorporates
-the limitation as if written in the body of this License.
+namespace Symfony\Component\Console\Input;
 
-  9. The Free Software Foundation may publish revised and/or new versions
-of the General Public License from time to time.  Such new versions will
-be similar in spirit to the present version, but may differ in detail to
-address new problems or concerns.
+use Symfony\Component\Console\Exception\InvalidArgumentException;
 
-Each version is given a distinguishing version number.  If the Program
-specifies a version number of this License which applies to it and "any
-later version", you have the option of following the terms and conditions
-either of that version or of any later version published by the Free
-Software Foundation.  If the Program does not specify a version number of
-this License, you may choose any version ever published by the Free Software
-Foundation.
+/**
+ * StringInput represents an input provided as a string.
+ *
+ * Usage:
+ *
+ *     $input = new StringInput('foo --bar="foobar"');
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class StringInput extends ArgvInput
+{
+    const REGEX_STRING = '([^\s]+?)(?:\s|(?<!\\\\)"|(?<!\\\\)\'|$)';
+    const REGEX_QUOTED_STRING = '(?:"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"|\'([^\'\\\\]*(?:\\\\.[^\'\\\\]*)*)\')';
 
-  10. If you wish to incorporate parts of the Program into other free
-programs whose distribution conditions are different, write to the author
-to ask for permission.  For software which is copyrighted by the Free
-Software Foundation, write to the Free Software Foundation; we sometimes
-make exceptions for this.  Our decision will be guided by the two goals
-of preserving the free status of all derivatives of our free software and
-of promoting the sharing and reuse of software generally.
+    /**
+     * Constructor.
+     *
+     * @param string          $input      An array of parameters from the CLI (in the argv format)
+     * @param InputDefinition $definition A InputDefinition instance
+     *
+     * @deprecated The second argument is deprecated as it does not work (will be removed in 3.0), use 'bind' method instead
+     */
+    public function __construct($input, InputDefinition $definition = null)
+    {
+        if ($definition) {
+            @trigger_error('The $definition argument of the '.__METHOD__.' method is deprecated and will be removed in 3.0. Set this parameter with the bind() method instead.', E_USER_DEPRECATED);
+        }
 
-                            NO WARRANTY
+        parent::__construct(array(), null);
 
-  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
-FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
-OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
-PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
-OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
-TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
-PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
-REPAIR OR CORRECTION.
+        $this->setTokens($this->tokenize($input));
 
-  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
-REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
-INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
-OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
-TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+        if (null !== $definition) {
+            $this->bind($definition);
+        }
+    }
+
+    /**
+     * Tokenizes a string.
+     *
+     * @param string $input The input to tokenize
+     *
+     * @return array An array of tokens
+     *
+     * @throws InvalidArgumentException When unable to parse input (should never happen)
+     */
+    private function tokenize($input)
+    {
+        $tokens = array();
+        $length = strlen($input);
+        $cursor = 0;
+        while ($cursor < $length) {
+            if (preg_match('/\s+/A', $input, $match, null, $cursor)) {
+            } elseif (preg_match('/([^="\'\s]+?)(=?)('.self::REGEX_QUOTED_STRING.'+)/A', $input, $match, null, $cursor)) {
+                $tokens[] = $match[1].$match[2].stripcslashes(str_replace(array('"\'', '\'"', '\'\'', '""'), '', substr($match[3], 1, strlen($match[3]) - 2)));
+            } elseif (preg_match('/'.self::REGEX_QUOTED_STRING.'/A', $input, $match, null, $cursor)) {
+                $tokens[] = stripcslashes(substr($match[0], 1, strlen($match[0]) - 2));
+            } elseif (preg_match('/'.self::REGEX_STRING.'/A', $input, $match, null, $cursor)) {
+                $tokens[] = stripcslashes($match[1]);
+            } else {
+                // should never happen
+                throw new InvalidArgumentException(sprintf('Unable to parse input near "... %s ..."', substr($input, $cursor, 10)));
+            }
+
+            $cursor += strlen($match[0]);
+        }
+
+        return $tokens;
+    }
+}

@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/user/plugins/form/blueprints.yaml',
-    'modified' => 1487220706,
+    'modified' => 1487585833,
     'data' => [
         'name' => 'Form',
-        'version' => '2.1.0',
+        'version' => '2.1.1',
         'description' => 'Enables the forms handling',
         'icon' => 'check-square',
         'author' => [

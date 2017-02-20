@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/system/blueprints/user/account.yaml',
-    'modified' => 1487220698,
+    'modified' => 1487585700,
     'data' => [
         'title' => 'Account',
         'form' => [
