@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp7/htdocs/grav-project/user/plugins/form/languages.yaml',
-    'modified' => 1486871678,
+    'modified' => 1487597624,
     'data' => [
         'en' => [
             'PLUGIN_FORM' => [
@@ -38,7 +38,9 @@ return [
                 'DROPZONE_MAX_FILES_EXCEEDED' => 'You can not upload any more files.',
                 'DROPZONE_REMOVE_FILE' => 'Remove file',
                 'DROPZONE_REMOVE_FILE_CONFIRMATION' => 'Are you sure you want to delete this file?',
-                'DROPZONE_RESPONSE_ERROR' => 'Server responded with {{statusCode}} code.'
+                'DROPZONE_RESPONSE_ERROR' => 'Server responded with {{statusCode}} code.',
+                'YES' => 'Yes',
+                'NO' => 'No'
             ]
         ],
         'de' => [
@@ -149,7 +151,9 @@ return [
                 'DESTINATION_HELP' => 'La destinazione dove i files vengono uploadati',
                 'ACCEPT' => 'Tipi di MIME Concessi',
                 'ACCEPT_HELP' => 'Una lista di tipi di MIME che sono permessi per l\'upload',
-                'ERROR_VALIDATING_CAPTCHA' => 'Errore durante la validazione del Captcha'
+                'ERROR_VALIDATING_CAPTCHA' => 'Errore durante la validazione del Captcha',
+                'YES' => 'Si',
+                'NO' => 'No'
             ]
         ],
         'ro' => [

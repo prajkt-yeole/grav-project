@@ -1,31 +1,17 @@
  <section id="partners">
         <div class="heading">
-            <h1>our partners</h1>
-            <span>We have already provided corporate training to the following partners</span>
+           {{content}}
             <div class="separator"></div>
         </div>
         <div class="container">
             <div class="row">
+            {% for partners in page.header.partners %}
                 <div class="col-md-3">
                     <div class="partner-logo">
-                        <img src="images/partners/wp.jpg" class="img-responsive" alt="">
+                        <img src="images/partners/{{ partners.img }}.jpg" class="img-responsive" alt="{{partners.alttext}}">
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="partner-logo">
-                        <img src="images/partners/magento.jpg" class="img-responsive" alt="">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="partner-logo">
-                        <img src="images/partners/joomla.jpg" class="img-responsive" alt="">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="partner-logo">
-                        <img src="images/partners/drupal.jpg" class="img-responsive" alt="">
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

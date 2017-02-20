@@ -1,7 +1,22 @@
-    <section id="features">
-        <div class="container">
-            {% block content %}
-                {{ page.content }}
-            {% endblock %}   
+<section id="features">
+    <div class="container">
+      <div class="row">
+        {% for feature in page.header.features %}
+        <div class="col-md-4">
+		    <div class="card">
+	            {% if feature.icon %}
+			            <img src="images/{{ feature.icon }}.png" alt="">
+	            {% else %}
+	            {% endif %}
+	            {% if feature.header %}
+	            <h3>{{ feature.header }}</h3>
+	            {% endif %}
+	            {% if feature.text %}
+	            <p>{{ feature.text }}</p>
+	            {% endif %}
+            </div>
         </div>
-    </section>
+    	{% endfor %}
+        </div>
+	</div> 
+</section>

@@ -1,0 +1,23 @@
+title: Partners
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        partners:
+          type: tab
+          title: Partners
+          fields:
+            header.partners:
+              name: partners
+              type: list
+              label: partners
+
+              fields:
+                .img:
+                  type: text
+                  label: Image name
+                .alttext:
+                  type: text
+                  label: alt text

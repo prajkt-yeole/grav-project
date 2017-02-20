@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp7/htdocs/grav-project/user/themes/cerium/blueprints.yaml',
-    'modified' => 1487173344,
+    'modified' => 1487597624,
     'data' => [
         'name' => 'Cerium',
-        'version' => '0.1.0',
+        'version' => '1.0.0',
         'description' => 'HTML theme',
         'icon' => 'rebel',
         'author' => [

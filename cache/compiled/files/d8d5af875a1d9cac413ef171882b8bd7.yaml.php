@@ -2,9 +2,9 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp7/htdocs/grav-project/user/config/site.yaml',
-    'modified' => 1486871678,
+    'modified' => 1487348266,
     'data' => [
-        'title' => 'Grav',
+        'title' => 'Cerium',
         'author' => [
             'name' => 'Joe Bloggs',
             'email' => 'joe@test.com'
