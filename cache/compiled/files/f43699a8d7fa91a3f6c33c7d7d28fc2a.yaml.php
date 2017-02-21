@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/user/plugins/problems/blueprints.yaml',
-    'modified' => 1487220707,
+    'modified' => 1487659147,
     'data' => [
         'name' => 'Problems',
-        'version' => '1.4.5',
+        'version' => '1.4.6',
         'description' => 'Detects and reports problems found in the site.',
         'icon' => 'exclamation-circle',
         'author' => [

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/user/plugins/admin/languages/it.yaml',
-    'modified' => 1487220698,
+    'modified' => 1487659067,
     'data' => [
         'PLUGIN_ADMIN' => [
             'ADMIN_BETA_MSG' => 'Questa è una versione beta! Usare in produzione a proprio rischio e pericolo…',

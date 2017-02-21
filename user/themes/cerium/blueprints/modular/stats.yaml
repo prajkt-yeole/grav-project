@@ -1,0 +1,26 @@
+title: Partners
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        stats:
+          type: tab
+          title: Statistics
+          fields:
+            header.stats:
+              name: stats
+              type: list
+              label: Stats Details
+
+              fields:
+                .icon:
+                  type: text
+                  label: Icon Name
+                .count:
+                  type: text
+                  label: Count
+                .heading:
+                  type: text
+                  label: description of stat

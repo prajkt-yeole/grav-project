@@ -2,13 +2,13 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp-7/htdocs/grav-project/user/plugins/admin/blueprints/admin/pages/modular_new.yaml',
-    'modified' => 1487220698,
+    'modified' => 1487659067,
     'data' => [
         'rules' => [
             'slug' => [
-                'pattern' => '[a-z][a-z0-9_\\-]+',
-                'min' => 2,
-                'max' => 80
+                'pattern' => '[a-zA-Zа-яA-Я0-9_\\-]+',
+                'min' => 1,
+                'max' => 200
             ]
         ],
         'form' => [
@@ -29,7 +29,7 @@ return [
                     'type' => 'text',
                     'label' => 'PLUGIN_ADMIN.FOLDER_NAME',
                     'validate' => [
-                        'type' => 'slug',
+                        'rule' => 'slug',
                         'required' => true
                     ]
                 ],

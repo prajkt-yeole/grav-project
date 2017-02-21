@@ -8,5 +8,7 @@
     {% for module in page.collection() %}
         {{ module.content }}
     {% endfor %}
-    {{ page.content }}
+    <div class="container">
+    	{{ page.content }}
+    </div>
 {% endblock %}
